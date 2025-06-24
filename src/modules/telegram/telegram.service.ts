@@ -226,6 +226,7 @@ export class TelegramService extends Telegraf {
     @Command(TelegramButtons.ShowFilterResults)
     @Action(new RegExp(`^${TelegramButtons.ShowFilterResults}:(.+)$`))
     async onShowFilterResults(@Ctx() ctx: any) {
+
         const filterId = ctx.match[1];
 
         const filter = await this.prismaService.filter.findUnique({

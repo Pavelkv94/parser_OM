@@ -1,8 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { Builder, By, until } from 'selenium-webdriver';
+import { Browser, Builder, By, until, WebDriver } from 'selenium-webdriver';
 import * as chrome from 'selenium-webdriver/chrome';
+import * as firefox from 'selenium-webdriver/firefox';
+
 import { PrismaService } from '../prisma/prisma.service';
-import { delay } from '@/src/utils/delay';
+import { ConfigService } from '@nestjs/config';
 
 export type CarData = {
     image: string | null;
@@ -23,20 +25,25 @@ export type CarData = {
 @Injectable()
 export class ScraperService {
     private driver: any;
-
-    constructor(private readonly prismaService: PrismaService) { }
+    private firefoxBinary: string;
+    constructor(private readonly configService: ConfigService) {
+        this.firefoxBinary = this.configService.get('FIREFOX_BINARY') || '/snap/firefox/6316/usr/lib/firefox/firefox';
+    }
 
     private async initDriver() {
-        const chromeOptions = new chrome.Options();
-        // chromeOptions.addArguments('--headless'); // Optional: run in headless mode
+        const firefoxOptions = new firefox.Options().setBinary(this.firefoxBinary);
+        firefoxOptions.addArguments(
+            '--headless',
+        );
 
         this.driver = await new Builder()
-            .forBrowser('chrome')
-            .setChromeOptions(chromeOptions)
+            .forBrowser(Browser.FIREFOX)
+            .setFirefoxOptions(firefoxOptions)
             .build();
     }
 
     async scrapeArticles(url: string, filterId: string): Promise<{ articles: CarData[], count: string }> {
+        console.log('Scrape articles');
         await this.initDriver();
         try {
             await this.driver.get(url);
