@@ -21,7 +21,6 @@
     "prisma:push": "prisma db push",
     "prisma:generate": "prisma generate",
     "prisma:studio": "prisma studio",
-    "prisma:seed": "ts-node src/core/modules/prisma/seed/prisma.seed.ts",
     "prisma:migrate:generate": "node -e \"require('child_process').execSync('prisma migrate dev --name ' + process.argv[1] + ' && prisma generate', { stdio: 'inherit' })\""
   },
   "dependencies": {
