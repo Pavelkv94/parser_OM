@@ -1,9 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { Browser, Builder, By, until, WebDriver } from 'selenium-webdriver';
-import * as chrome from 'selenium-webdriver/chrome';
+import { Browser, Builder, By, until } from 'selenium-webdriver';
 import * as firefox from 'selenium-webdriver/firefox';
 
-import { PrismaService } from '../prisma/prisma.service';
 import { ConfigService } from '@nestjs/config';
 
 export type CarData = {
@@ -58,6 +56,14 @@ export class ScraperService {
             const innerDivs1 = await divs[1].findElements(By.xpath('./div'));
             const innerDivs2 = await innerDivs1[0].findElements(By.xpath('./div'));
             const innerDivs3 = await innerDivs2[2].findElements(By.xpath('./div'));
+
+            const innerDivsBanner = await innerDivs2[0].findElements(By.xpath('./div'));
+
+            if (innerDivsBanner.length === 2) {
+                const notResultsMessage = await innerDivsBanner[1].getText()
+                return { articles: [], count: "0" };
+            }
+
             // find count of auto
             const mainHeader = await innerDivs3[0].findElements(By.xpath('./div'));
             const countElements = await mainHeader[0].findElements(By.tagName('p'));

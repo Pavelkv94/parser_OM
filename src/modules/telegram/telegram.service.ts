@@ -10,7 +10,8 @@ import { CarData, ScraperService } from '../scrapper/scrapper.service';
 import { buildScrapeUrl } from '@/src/utils/buildScrapeUrl.util';
 import { parsePublishedAt } from '@/src/utils/parseDate';
 import { CarService } from '../car-repository/car.service';
-import { Car, Filter } from '@/prisma/generated';
+import { Car } from '@/prisma/generated';
+import { filters } from '../../contants/filters';
 
 @Update()
 @Injectable()
@@ -99,59 +100,17 @@ export class TelegramService extends Telegraf {
             return;
         }
 
-        await this.prismaService.filter.create({
-            data: {
-                userId: user.id,
-                brand: 'ford',
-                model: 'focus',
-                fromYear: '2011',
-                city: 'krakow',
-                fuelTypeFirst: 'petrol',
-                fuelTypeSecond: 'diesel',
-                gearbox: 'manual',
-                engine_capacity_from: '1500',
-                engine_capacity_to: '1650',
-                price_from: '10000',
-                price_to: '35000',
-                sortBy: 'created_at_first',
-            }
-        });
+        const existingFilters = await this.prismaService.filter.findMany({})
 
-        await this.prismaService.filter.create({
-            data: {
-                userId: user.id,
-                brand: 'renault',
-                model: 'megane',
-                fromYear: '2011',
-                city: 'krakow',
-                fuelTypeFirst: 'petrol',
-                fuelTypeSecond: 'diesel',
-                gearbox: 'manual',
-                engine_capacity_from: '1450',
-                engine_capacity_to: '1650',
-                price_from: '10000',
-                price_to: '35000',
-                sortBy: 'created_at_first',
-            }
-        });
+        if (existingFilters.length > 0) {
+            await ctx.reply(TELEGRAM_MESSAGES.filtersAlreadySet);
+            return;
+        }
 
-        await this.prismaService.filter.create({
-            data: {
-                userId: user.id,
-                brand: 'dacia',
-                model: 'duster',
-                fromYear: '2014',
-                city: 'krakow',
-                fuelTypeFirst: 'petrol',
-                fuelTypeSecond: 'diesel',
-                gearbox: 'manual',
-                engine_capacity_from: '1450',
-                engine_capacity_to: '1650',
-                price_from: '10000',
-                price_to: '35000',
-                sortBy: 'created_at_first',
-            }
-        });
+        const adminFilters = filters.map(f => ({ ...f, userId: user.id }))
+        await this.prismaService.filter.createMany({
+            data: adminFilters
+        })
 
         await ctx.reply(TELEGRAM_MESSAGES.filtersSet);
 
@@ -239,6 +198,7 @@ export class TelegramService extends Telegraf {
         }
 
         const url = buildScrapeUrl(filter);
+        console.log(url)
         const cars = await this.scraperService.scrapeArticles(url, filterId);
         if (cars.articles.length > 0) {
             await this.carService.saveCarsToPrisma(cars.articles, filterId);

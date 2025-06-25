@@ -3297,8 +3297,10 @@ export namespace Prisma {
     model: string | null
     fromYear: string | null
     city: string | null
-    fuelTypeFirst: string | null
-    fuelTypeSecond: string | null
+    lat: string | null
+    lon: string | null
+    distance: string | null
+    fuelType: string | null
     gearbox: string | null
     engine_capacity_from: string | null
     engine_capacity_to: string | null
@@ -3316,8 +3318,10 @@ export namespace Prisma {
     model: string | null
     fromYear: string | null
     city: string | null
-    fuelTypeFirst: string | null
-    fuelTypeSecond: string | null
+    lat: string | null
+    lon: string | null
+    distance: string | null
+    fuelType: string | null
     gearbox: string | null
     engine_capacity_from: string | null
     engine_capacity_to: string | null
@@ -3335,8 +3339,10 @@ export namespace Prisma {
     model: number
     fromYear: number
     city: number
-    fuelTypeFirst: number
-    fuelTypeSecond: number
+    lat: number
+    lon: number
+    distance: number
+    fuelType: number
     gearbox: number
     engine_capacity_from: number
     engine_capacity_to: number
@@ -3356,8 +3362,10 @@ export namespace Prisma {
     model?: true
     fromYear?: true
     city?: true
-    fuelTypeFirst?: true
-    fuelTypeSecond?: true
+    lat?: true
+    lon?: true
+    distance?: true
+    fuelType?: true
     gearbox?: true
     engine_capacity_from?: true
     engine_capacity_to?: true
@@ -3375,8 +3383,10 @@ export namespace Prisma {
     model?: true
     fromYear?: true
     city?: true
-    fuelTypeFirst?: true
-    fuelTypeSecond?: true
+    lat?: true
+    lon?: true
+    distance?: true
+    fuelType?: true
     gearbox?: true
     engine_capacity_from?: true
     engine_capacity_to?: true
@@ -3394,8 +3404,10 @@ export namespace Prisma {
     model?: true
     fromYear?: true
     city?: true
-    fuelTypeFirst?: true
-    fuelTypeSecond?: true
+    lat?: true
+    lon?: true
+    distance?: true
+    fuelType?: true
     gearbox?: true
     engine_capacity_from?: true
     engine_capacity_to?: true
@@ -3486,8 +3498,10 @@ export namespace Prisma {
     model: string
     fromYear: string
     city: string
-    fuelTypeFirst: string
-    fuelTypeSecond: string
+    lat: string
+    lon: string
+    distance: string
+    fuelType: string
     gearbox: string
     engine_capacity_from: string
     engine_capacity_to: string
@@ -3522,8 +3536,10 @@ export namespace Prisma {
     model?: boolean
     fromYear?: boolean
     city?: boolean
-    fuelTypeFirst?: boolean
-    fuelTypeSecond?: boolean
+    lat?: boolean
+    lon?: boolean
+    distance?: boolean
+    fuelType?: boolean
     gearbox?: boolean
     engine_capacity_from?: boolean
     engine_capacity_to?: boolean
@@ -3544,8 +3560,10 @@ export namespace Prisma {
     model?: boolean
     fromYear?: boolean
     city?: boolean
-    fuelTypeFirst?: boolean
-    fuelTypeSecond?: boolean
+    lat?: boolean
+    lon?: boolean
+    distance?: boolean
+    fuelType?: boolean
     gearbox?: boolean
     engine_capacity_from?: boolean
     engine_capacity_to?: boolean
@@ -3564,8 +3582,10 @@ export namespace Prisma {
     model?: boolean
     fromYear?: boolean
     city?: boolean
-    fuelTypeFirst?: boolean
-    fuelTypeSecond?: boolean
+    lat?: boolean
+    lon?: boolean
+    distance?: boolean
+    fuelType?: boolean
     gearbox?: boolean
     engine_capacity_from?: boolean
     engine_capacity_to?: boolean
@@ -3584,8 +3604,10 @@ export namespace Prisma {
     model?: boolean
     fromYear?: boolean
     city?: boolean
-    fuelTypeFirst?: boolean
-    fuelTypeSecond?: boolean
+    lat?: boolean
+    lon?: boolean
+    distance?: boolean
+    fuelType?: boolean
     gearbox?: boolean
     engine_capacity_from?: boolean
     engine_capacity_to?: boolean
@@ -3597,7 +3619,7 @@ export namespace Prisma {
     userId?: boolean
   }
 
-  export type FilterOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "brand" | "model" | "fromYear" | "city" | "fuelTypeFirst" | "fuelTypeSecond" | "gearbox" | "engine_capacity_from" | "engine_capacity_to" | "price_from" | "price_to" | "sortBy" | "createdAt" | "updatedAt" | "userId", ExtArgs["result"]["filter"]>
+  export type FilterOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "brand" | "model" | "fromYear" | "city" | "lat" | "lon" | "distance" | "fuelType" | "gearbox" | "engine_capacity_from" | "engine_capacity_to" | "price_from" | "price_to" | "sortBy" | "createdAt" | "updatedAt" | "userId", ExtArgs["result"]["filter"]>
   export type FilterInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | UserDefaultArgs<ExtArgs>
     cars?: boolean | Filter$carsArgs<ExtArgs>
@@ -3622,8 +3644,10 @@ export namespace Prisma {
       model: string
       fromYear: string
       city: string
-      fuelTypeFirst: string
-      fuelTypeSecond: string
+      lat: string
+      lon: string
+      distance: string
+      fuelType: string
       gearbox: string
       engine_capacity_from: string
       engine_capacity_to: string
@@ -4063,8 +4087,10 @@ export namespace Prisma {
     readonly model: FieldRef<"Filter", 'String'>
     readonly fromYear: FieldRef<"Filter", 'String'>
     readonly city: FieldRef<"Filter", 'String'>
-    readonly fuelTypeFirst: FieldRef<"Filter", 'String'>
-    readonly fuelTypeSecond: FieldRef<"Filter", 'String'>
+    readonly lat: FieldRef<"Filter", 'String'>
+    readonly lon: FieldRef<"Filter", 'String'>
+    readonly distance: FieldRef<"Filter", 'String'>
+    readonly fuelType: FieldRef<"Filter", 'String'>
     readonly gearbox: FieldRef<"Filter", 'String'>
     readonly engine_capacity_from: FieldRef<"Filter", 'String'>
     readonly engine_capacity_to: FieldRef<"Filter", 'String'>
@@ -5756,8 +5782,10 @@ export namespace Prisma {
     model: 'model',
     fromYear: 'fromYear',
     city: 'city',
-    fuelTypeFirst: 'fuelTypeFirst',
-    fuelTypeSecond: 'fuelTypeSecond',
+    lat: 'lat',
+    lon: 'lon',
+    distance: 'distance',
+    fuelType: 'fuelType',
     gearbox: 'gearbox',
     engine_capacity_from: 'engine_capacity_from',
     engine_capacity_to: 'engine_capacity_to',
@@ -5989,8 +6017,10 @@ export namespace Prisma {
     model?: StringFilter<"Filter"> | string
     fromYear?: StringFilter<"Filter"> | string
     city?: StringFilter<"Filter"> | string
-    fuelTypeFirst?: StringFilter<"Filter"> | string
-    fuelTypeSecond?: StringFilter<"Filter"> | string
+    lat?: StringFilter<"Filter"> | string
+    lon?: StringFilter<"Filter"> | string
+    distance?: StringFilter<"Filter"> | string
+    fuelType?: StringFilter<"Filter"> | string
     gearbox?: StringFilter<"Filter"> | string
     engine_capacity_from?: StringFilter<"Filter"> | string
     engine_capacity_to?: StringFilter<"Filter"> | string
@@ -6010,8 +6040,10 @@ export namespace Prisma {
     model?: SortOrder
     fromYear?: SortOrder
     city?: SortOrder
-    fuelTypeFirst?: SortOrder
-    fuelTypeSecond?: SortOrder
+    lat?: SortOrder
+    lon?: SortOrder
+    distance?: SortOrder
+    fuelType?: SortOrder
     gearbox?: SortOrder
     engine_capacity_from?: SortOrder
     engine_capacity_to?: SortOrder
@@ -6034,8 +6066,10 @@ export namespace Prisma {
     model?: StringFilter<"Filter"> | string
     fromYear?: StringFilter<"Filter"> | string
     city?: StringFilter<"Filter"> | string
-    fuelTypeFirst?: StringFilter<"Filter"> | string
-    fuelTypeSecond?: StringFilter<"Filter"> | string
+    lat?: StringFilter<"Filter"> | string
+    lon?: StringFilter<"Filter"> | string
+    distance?: StringFilter<"Filter"> | string
+    fuelType?: StringFilter<"Filter"> | string
     gearbox?: StringFilter<"Filter"> | string
     engine_capacity_from?: StringFilter<"Filter"> | string
     engine_capacity_to?: StringFilter<"Filter"> | string
@@ -6055,8 +6089,10 @@ export namespace Prisma {
     model?: SortOrder
     fromYear?: SortOrder
     city?: SortOrder
-    fuelTypeFirst?: SortOrder
-    fuelTypeSecond?: SortOrder
+    lat?: SortOrder
+    lon?: SortOrder
+    distance?: SortOrder
+    fuelType?: SortOrder
     gearbox?: SortOrder
     engine_capacity_from?: SortOrder
     engine_capacity_to?: SortOrder
@@ -6080,8 +6116,10 @@ export namespace Prisma {
     model?: StringWithAggregatesFilter<"Filter"> | string
     fromYear?: StringWithAggregatesFilter<"Filter"> | string
     city?: StringWithAggregatesFilter<"Filter"> | string
-    fuelTypeFirst?: StringWithAggregatesFilter<"Filter"> | string
-    fuelTypeSecond?: StringWithAggregatesFilter<"Filter"> | string
+    lat?: StringWithAggregatesFilter<"Filter"> | string
+    lon?: StringWithAggregatesFilter<"Filter"> | string
+    distance?: StringWithAggregatesFilter<"Filter"> | string
+    fuelType?: StringWithAggregatesFilter<"Filter"> | string
     gearbox?: StringWithAggregatesFilter<"Filter"> | string
     engine_capacity_from?: StringWithAggregatesFilter<"Filter"> | string
     engine_capacity_to?: StringWithAggregatesFilter<"Filter"> | string
@@ -6332,8 +6370,10 @@ export namespace Prisma {
     model: string
     fromYear: string
     city: string
-    fuelTypeFirst: string
-    fuelTypeSecond: string
+    lat: string
+    lon: string
+    distance: string
+    fuelType: string
     gearbox: string
     engine_capacity_from: string
     engine_capacity_to: string
@@ -6352,8 +6392,10 @@ export namespace Prisma {
     model: string
     fromYear: string
     city: string
-    fuelTypeFirst: string
-    fuelTypeSecond: string
+    lat: string
+    lon: string
+    distance: string
+    fuelType: string
     gearbox: string
     engine_capacity_from: string
     engine_capacity_to: string
@@ -6372,8 +6414,10 @@ export namespace Prisma {
     model?: StringFieldUpdateOperationsInput | string
     fromYear?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
-    fuelTypeFirst?: StringFieldUpdateOperationsInput | string
-    fuelTypeSecond?: StringFieldUpdateOperationsInput | string
+    lat?: StringFieldUpdateOperationsInput | string
+    lon?: StringFieldUpdateOperationsInput | string
+    distance?: StringFieldUpdateOperationsInput | string
+    fuelType?: StringFieldUpdateOperationsInput | string
     gearbox?: StringFieldUpdateOperationsInput | string
     engine_capacity_from?: StringFieldUpdateOperationsInput | string
     engine_capacity_to?: StringFieldUpdateOperationsInput | string
@@ -6392,8 +6436,10 @@ export namespace Prisma {
     model?: StringFieldUpdateOperationsInput | string
     fromYear?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
-    fuelTypeFirst?: StringFieldUpdateOperationsInput | string
-    fuelTypeSecond?: StringFieldUpdateOperationsInput | string
+    lat?: StringFieldUpdateOperationsInput | string
+    lon?: StringFieldUpdateOperationsInput | string
+    distance?: StringFieldUpdateOperationsInput | string
+    fuelType?: StringFieldUpdateOperationsInput | string
     gearbox?: StringFieldUpdateOperationsInput | string
     engine_capacity_from?: StringFieldUpdateOperationsInput | string
     engine_capacity_to?: StringFieldUpdateOperationsInput | string
@@ -6412,8 +6458,10 @@ export namespace Prisma {
     model: string
     fromYear: string
     city: string
-    fuelTypeFirst: string
-    fuelTypeSecond: string
+    lat: string
+    lon: string
+    distance: string
+    fuelType: string
     gearbox: string
     engine_capacity_from: string
     engine_capacity_to: string
@@ -6431,8 +6479,10 @@ export namespace Prisma {
     model?: StringFieldUpdateOperationsInput | string
     fromYear?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
-    fuelTypeFirst?: StringFieldUpdateOperationsInput | string
-    fuelTypeSecond?: StringFieldUpdateOperationsInput | string
+    lat?: StringFieldUpdateOperationsInput | string
+    lon?: StringFieldUpdateOperationsInput | string
+    distance?: StringFieldUpdateOperationsInput | string
+    fuelType?: StringFieldUpdateOperationsInput | string
     gearbox?: StringFieldUpdateOperationsInput | string
     engine_capacity_from?: StringFieldUpdateOperationsInput | string
     engine_capacity_to?: StringFieldUpdateOperationsInput | string
@@ -6449,8 +6499,10 @@ export namespace Prisma {
     model?: StringFieldUpdateOperationsInput | string
     fromYear?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
-    fuelTypeFirst?: StringFieldUpdateOperationsInput | string
-    fuelTypeSecond?: StringFieldUpdateOperationsInput | string
+    lat?: StringFieldUpdateOperationsInput | string
+    lon?: StringFieldUpdateOperationsInput | string
+    distance?: StringFieldUpdateOperationsInput | string
+    fuelType?: StringFieldUpdateOperationsInput | string
     gearbox?: StringFieldUpdateOperationsInput | string
     engine_capacity_from?: StringFieldUpdateOperationsInput | string
     engine_capacity_to?: StringFieldUpdateOperationsInput | string
@@ -6772,8 +6824,10 @@ export namespace Prisma {
     model?: SortOrder
     fromYear?: SortOrder
     city?: SortOrder
-    fuelTypeFirst?: SortOrder
-    fuelTypeSecond?: SortOrder
+    lat?: SortOrder
+    lon?: SortOrder
+    distance?: SortOrder
+    fuelType?: SortOrder
     gearbox?: SortOrder
     engine_capacity_from?: SortOrder
     engine_capacity_to?: SortOrder
@@ -6791,8 +6845,10 @@ export namespace Prisma {
     model?: SortOrder
     fromYear?: SortOrder
     city?: SortOrder
-    fuelTypeFirst?: SortOrder
-    fuelTypeSecond?: SortOrder
+    lat?: SortOrder
+    lon?: SortOrder
+    distance?: SortOrder
+    fuelType?: SortOrder
     gearbox?: SortOrder
     engine_capacity_from?: SortOrder
     engine_capacity_to?: SortOrder
@@ -6810,8 +6866,10 @@ export namespace Prisma {
     model?: SortOrder
     fromYear?: SortOrder
     city?: SortOrder
-    fuelTypeFirst?: SortOrder
-    fuelTypeSecond?: SortOrder
+    lat?: SortOrder
+    lon?: SortOrder
+    distance?: SortOrder
+    fuelType?: SortOrder
     gearbox?: SortOrder
     engine_capacity_from?: SortOrder
     engine_capacity_to?: SortOrder
@@ -7124,8 +7182,10 @@ export namespace Prisma {
     model: string
     fromYear: string
     city: string
-    fuelTypeFirst: string
-    fuelTypeSecond: string
+    lat: string
+    lon: string
+    distance: string
+    fuelType: string
     gearbox: string
     engine_capacity_from: string
     engine_capacity_to: string
@@ -7143,8 +7203,10 @@ export namespace Prisma {
     model: string
     fromYear: string
     city: string
-    fuelTypeFirst: string
-    fuelTypeSecond: string
+    lat: string
+    lon: string
+    distance: string
+    fuelType: string
     gearbox: string
     engine_capacity_from: string
     engine_capacity_to: string
@@ -7191,8 +7253,10 @@ export namespace Prisma {
     model?: StringFilter<"Filter"> | string
     fromYear?: StringFilter<"Filter"> | string
     city?: StringFilter<"Filter"> | string
-    fuelTypeFirst?: StringFilter<"Filter"> | string
-    fuelTypeSecond?: StringFilter<"Filter"> | string
+    lat?: StringFilter<"Filter"> | string
+    lon?: StringFilter<"Filter"> | string
+    distance?: StringFilter<"Filter"> | string
+    fuelType?: StringFilter<"Filter"> | string
     gearbox?: StringFilter<"Filter"> | string
     engine_capacity_from?: StringFilter<"Filter"> | string
     engine_capacity_to?: StringFilter<"Filter"> | string
@@ -7346,8 +7410,10 @@ export namespace Prisma {
     model: string
     fromYear: string
     city: string
-    fuelTypeFirst: string
-    fuelTypeSecond: string
+    lat: string
+    lon: string
+    distance: string
+    fuelType: string
     gearbox: string
     engine_capacity_from: string
     engine_capacity_to: string
@@ -7365,8 +7431,10 @@ export namespace Prisma {
     model: string
     fromYear: string
     city: string
-    fuelTypeFirst: string
-    fuelTypeSecond: string
+    lat: string
+    lon: string
+    distance: string
+    fuelType: string
     gearbox: string
     engine_capacity_from: string
     engine_capacity_to: string
@@ -7400,8 +7468,10 @@ export namespace Prisma {
     model?: StringFieldUpdateOperationsInput | string
     fromYear?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
-    fuelTypeFirst?: StringFieldUpdateOperationsInput | string
-    fuelTypeSecond?: StringFieldUpdateOperationsInput | string
+    lat?: StringFieldUpdateOperationsInput | string
+    lon?: StringFieldUpdateOperationsInput | string
+    distance?: StringFieldUpdateOperationsInput | string
+    fuelType?: StringFieldUpdateOperationsInput | string
     gearbox?: StringFieldUpdateOperationsInput | string
     engine_capacity_from?: StringFieldUpdateOperationsInput | string
     engine_capacity_to?: StringFieldUpdateOperationsInput | string
@@ -7419,8 +7489,10 @@ export namespace Prisma {
     model?: StringFieldUpdateOperationsInput | string
     fromYear?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
-    fuelTypeFirst?: StringFieldUpdateOperationsInput | string
-    fuelTypeSecond?: StringFieldUpdateOperationsInput | string
+    lat?: StringFieldUpdateOperationsInput | string
+    lon?: StringFieldUpdateOperationsInput | string
+    distance?: StringFieldUpdateOperationsInput | string
+    fuelType?: StringFieldUpdateOperationsInput | string
     gearbox?: StringFieldUpdateOperationsInput | string
     engine_capacity_from?: StringFieldUpdateOperationsInput | string
     engine_capacity_to?: StringFieldUpdateOperationsInput | string
@@ -7438,8 +7510,10 @@ export namespace Prisma {
     model: string
     fromYear: string
     city: string
-    fuelTypeFirst: string
-    fuelTypeSecond: string
+    lat: string
+    lon: string
+    distance: string
+    fuelType: string
     gearbox: string
     engine_capacity_from: string
     engine_capacity_to: string
@@ -7456,8 +7530,10 @@ export namespace Prisma {
     model?: StringFieldUpdateOperationsInput | string
     fromYear?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
-    fuelTypeFirst?: StringFieldUpdateOperationsInput | string
-    fuelTypeSecond?: StringFieldUpdateOperationsInput | string
+    lat?: StringFieldUpdateOperationsInput | string
+    lon?: StringFieldUpdateOperationsInput | string
+    distance?: StringFieldUpdateOperationsInput | string
+    fuelType?: StringFieldUpdateOperationsInput | string
     gearbox?: StringFieldUpdateOperationsInput | string
     engine_capacity_from?: StringFieldUpdateOperationsInput | string
     engine_capacity_to?: StringFieldUpdateOperationsInput | string
@@ -7475,8 +7551,10 @@ export namespace Prisma {
     model?: StringFieldUpdateOperationsInput | string
     fromYear?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
-    fuelTypeFirst?: StringFieldUpdateOperationsInput | string
-    fuelTypeSecond?: StringFieldUpdateOperationsInput | string
+    lat?: StringFieldUpdateOperationsInput | string
+    lon?: StringFieldUpdateOperationsInput | string
+    distance?: StringFieldUpdateOperationsInput | string
+    fuelType?: StringFieldUpdateOperationsInput | string
     gearbox?: StringFieldUpdateOperationsInput | string
     engine_capacity_from?: StringFieldUpdateOperationsInput | string
     engine_capacity_to?: StringFieldUpdateOperationsInput | string
@@ -7494,8 +7572,10 @@ export namespace Prisma {
     model?: StringFieldUpdateOperationsInput | string
     fromYear?: StringFieldUpdateOperationsInput | string
     city?: StringFieldUpdateOperationsInput | string
-    fuelTypeFirst?: StringFieldUpdateOperationsInput | string
-    fuelTypeSecond?: StringFieldUpdateOperationsInput | string
+    lat?: StringFieldUpdateOperationsInput | string
+    lon?: StringFieldUpdateOperationsInput | string
+    distance?: StringFieldUpdateOperationsInput | string
+    fuelType?: StringFieldUpdateOperationsInput | string
     gearbox?: StringFieldUpdateOperationsInput | string
     engine_capacity_from?: StringFieldUpdateOperationsInput | string
     engine_capacity_to?: StringFieldUpdateOperationsInput | string

@@ -17,7 +17,8 @@ export const TELEGRAM_BUTTONS = {
 
     adminButtons: () =>
         Markup.keyboard([
-            [Markup.button.text(TelegramButtons.ShowLastCars),
+            [
+            //Markup.button.text(TelegramButtons.ShowLastCars),
             Markup.button.text(TelegramButtons.SetFilters),
             Markup.button.text(TelegramButtons.GenerateNewToken)
             ],

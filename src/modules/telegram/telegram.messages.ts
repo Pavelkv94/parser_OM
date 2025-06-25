@@ -3,13 +3,14 @@ import { CarData } from "../scrapper/scrapper.service";
 
 export const TEMP_TEXT = 'tempText';
 export const TELEGRAM_MESSAGES = {
-    start: 'Welcome to the bot!',
-    welcomeWithoutToken: 'Welcome to the bot! Please get your token to connect your account.',
+    start: 'Welcome to the Otomoto assistant!',
+    welcomeWithoutToken: 'Welcome to the Otomoto assistant! Please get your token to connect your account.',
     haventRights: 'You haven\'t rights to use this command!',
     invalidToken: 'Invalid token!',
     yourToken: (token: string) => `New invite link is:\n https://t.me/otoseeker_bot?start=${token}`,
     telegramConnected: 'Telegram connected successfully!',
     filtersSet: 'Filters set successfully!',
+    filtersAlreadySet: 'Filters already set!',
     noCars: 'No cars found for your filters.',
     car: (car: CarData) => `
       ${car.title ? `${car.title} (${car.year})` : TEMP_TEXT}
@@ -29,10 +30,10 @@ ${car.description ? `${car.description}` : TEMP_TEXT}
 
     filter: (filter: Filter) => `
 🏎 <b>${filter.brand.toUpperCase()} ${filter.model.toUpperCase()}</b>
+🏠 <b>City:</b> ${filter.city.toUpperCase()}
 
- <b>From Year:</b> ${filter.fromYear}    
-🏠 <b>City:</b> ${filter.city}
-⛽ <b>Fuel Type:</b> ${filter.fuelTypeFirst} ${filter.fuelTypeSecond}
+📅 <b>From Year:</b> ${filter.fromYear}    
+⛽ <b>Fuel Type:</b> ${filter.fuelType}
 ⚙️ <b>Gearbox:</b> ${filter.gearbox}
 💨 <b>Engine Capacity:</b> ${filter.engine_capacity_from} - ${filter.engine_capacity_to}
 💰 <b>Price:</b> ${filter.price_from} - ${filter.price_to}
