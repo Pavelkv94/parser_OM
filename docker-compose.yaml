@@ -5,6 +5,7 @@ services:
       dockerfile: Dockerfile
     shm_size: '1g' # Add this line
     container_name: otomoto-app
+    restart: unless-stopped
     environment:
       - POSTGRES_URI=${POSTGRES_URI}
       - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
@@ -45,3 +46,4 @@ volumes:
 networks:
   otomoto_network:
     name: otomoto_network
+    driver: bridge
