@@ -44,6 +44,9 @@ COPY . .
 # Generate Prisma client
 RUN npx prisma generate
 
+# Generate Prisma client
+RUN npx prisma migrate dev --name init
+
 # Build the application
 RUN npm run build
 
