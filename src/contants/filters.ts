@@ -84,7 +84,6 @@ export const filters = [
         sortBy: 'created_at_first',
         enabled: true
     },
-    //!
     {
         brand: 'ford',
         model: 'focus',

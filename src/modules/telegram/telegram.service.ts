@@ -108,6 +108,7 @@ export class TelegramService extends Telegraf {
         }
 
         const adminFilters = filters.map(f => ({ ...f, userId: user.id }))
+        console.log("Init filters count: ", adminFilters.length)
         await this.prismaService.filter.createMany({
             data: adminFilters
         })
@@ -165,7 +166,7 @@ export class TelegramService extends Telegraf {
             await ctx.reply(TELEGRAM_MESSAGES.haventRights);
             return;
         }
-
+        console.log("GET FILTERS =====================================")
         const filters = await this.prismaService.filter.findMany({
             //todo make own filters for each user
             // where: {
