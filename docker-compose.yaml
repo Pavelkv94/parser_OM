@@ -25,7 +25,7 @@ services:
     networks:
       - otomoto_network
 
-  postgres:
+  otomoto-postgres:
     image: postgres:latest
     container_name: otomoto_postgres
     restart: always
@@ -36,12 +36,12 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - otomoto-postgres:/var/lib/postgresql/data
     networks:
       - otomoto_network
 
 volumes:
-  postgres_data:
+  otomoto-postgres:
 
 networks:
   otomoto_network:
