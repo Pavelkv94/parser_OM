@@ -19,7 +19,7 @@ services:
     ports:
       - "4000:3000"
     depends_on:
-      - postgres
+      - otomoto-postgres
     volumes:
       - .:/usr/src/app
     networks:
