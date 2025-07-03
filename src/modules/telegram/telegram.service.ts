@@ -160,6 +160,7 @@ export class TelegramService extends Telegraf {
     async onGetFilters(@Ctx() ctx: Context) {
         const chatId = ctx.chat?.id.toString();
         const user = await this.findUserByTelegramId(chatId!);
+        const isAdmin = chatId === this.configService.get<string>('TELEGRAM_ADMIN_ID');
         if (!user) {
             await ctx.reply(TELEGRAM_MESSAGES.haventRights);
             return;
@@ -178,7 +179,11 @@ export class TelegramService extends Telegraf {
         }
 
         for (const filter of filters) {
-            await ctx.replyWithHTML(TELEGRAM_MESSAGES.filter(filter), TELEGRAM_BUTTONS.showFilterResults(filter.id));
+            if (isAdmin) {
+                await ctx.replyWithHTML(TELEGRAM_MESSAGES.filter(filter), TELEGRAM_BUTTONS.showFilterResults(filter.id));
+            } else {
+                await ctx.replyWithHTML(TELEGRAM_MESSAGES.filter(filter));
+            }
         }
     }
 

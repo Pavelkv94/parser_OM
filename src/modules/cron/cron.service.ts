@@ -21,10 +21,11 @@ export class CronService {
         const filters = await this.prismaService.filter.findMany({});
 
         const singleFilters = filters.filter((f, i) => i === 1);
+        const enabledFilters = filters.filter((f) => f.enabled);
         const savedCarLinks = await this.prismaService.car.findMany({});
 
-        if (filters.length > 0) {
-            for (const filter of filters) {
+        if (enabledFilters.length > 0) {
+            for (const filter of enabledFilters) {
                 try {
                     const cars = await this.scraperService.scrapeArticles(buildScrapeUrl(filter), filter.id);
 

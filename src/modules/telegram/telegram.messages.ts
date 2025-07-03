@@ -29,7 +29,7 @@ ${car.description ? `${car.description}` : TEMP_TEXT}
     ${car.link ? `🔗 ${car.link}` : TEMP_TEXT}`.replace(TEMP_TEXT, ''),
 
     filter: (filter: Filter) => `
-🏎 <b>${filter.brand.toUpperCase()} ${filter.model.toUpperCase()}</b>
+🏎 <b>${filter.enabled ? '🟢' : '🔴'} ${filter.brand.toUpperCase()} ${filter.model.toUpperCase()}</b>
 🏠 <b>City:</b> ${filter.city.toUpperCase()}
 
 📅 <b>From Year:</b> ${filter.fromYear}    

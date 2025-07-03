@@ -2,7 +2,7 @@ export const filters = [
     {
         brand: 'ford',
         model: 'focus',
-        fromYear: '2011',
+        fromYear: '2010',
         city: 'krakow',
         lat: '50.07567',
         lon: '19.93084',
@@ -14,11 +14,12 @@ export const filters = [
         price_from: '15000',
         price_to: '35000',
         sortBy: 'created_at_first',
+        enabled: true
     },
     {
         brand: 'renault',
         model: 'megane',
-        fromYear: '2011',
+        fromYear: '2010',
         city: 'krakow',
         lat: '50.07567',
         lon: '19.93084',
@@ -30,11 +31,12 @@ export const filters = [
         price_from: '15000',
         price_to: '35000',
         sortBy: 'created_at_first',
+        enabled: true
     },
     {
         brand: 'dacia',
         model: 'duster',
-        fromYear: '2014',
+        fromYear: '2010',
         city: 'krakow',
         lat: '50.07567',
         lon: '19.93084',
@@ -46,7 +48,43 @@ export const filters = [
         price_from: '15000',
         price_to: '35000',
         sortBy: 'created_at_first',
+        enabled: true
     },
+    {
+        brand: 'nissan',
+        model: 'qashqai--qashqai-2',
+        fromYear: '2008',
+        city: 'krakow',
+        lat: '50.07567',
+        lon: '19.93084',
+        distance: '15',
+        fuelType: 'petrol',
+        gearbox: 'manual',
+        engine_capacity_from: '1500',
+        engine_capacity_to: '1650',
+        price_from: '15000',
+        price_to: '40000',
+        sortBy: 'created_at_first',
+        enabled: true
+    },
+    {
+        brand: 'hyundai',
+        model: 'ix35',
+        fromYear: '2008',
+        city: 'krakow',
+        lat: '50.07567',
+        lon: '19.93084',
+        distance: '15',
+        fuelType: 'petrol',
+        gearbox: 'manual',
+        engine_capacity_from: '1500',
+        engine_capacity_to: '1650',
+        price_from: '20000',
+        price_to: '40000',
+        sortBy: 'created_at_first',
+        enabled: true
+    },
+    //!
     {
         brand: 'ford',
         model: 'focus',
@@ -62,6 +100,7 @@ export const filters = [
         price_from: '15000',
         price_to: '35000',
         sortBy: 'created_at_first',
+        enabled: true
     },
     {
         brand: 'renault',
@@ -78,6 +117,7 @@ export const filters = [
         price_from: '15000',
         price_to: '35000',
         sortBy: 'created_at_first',
+        enabled: true
     },
     {
         brand: 'dacia',
@@ -94,5 +134,40 @@ export const filters = [
         price_from: '15000',
         price_to: '35000',
         sortBy: 'created_at_first',
+        enabled: true
+    },
+    {
+        brand: 'hyundai',
+        model: 'ix35',
+        fromYear: '2008',
+        city: 'katowice',
+        lat: '50.26288',
+        lon: '19.02276',
+        distance: '10',
+        fuelType: 'petrol',
+        gearbox: 'manual',
+        engine_capacity_from: '1450',
+        engine_capacity_to: '1650',
+        price_from: '20000',
+        price_to: '40000',
+        sortBy: 'created_at_first',
+        enabled: true
+    },
+    {
+        brand: 'nissan',
+        model: 'qashqai--qashqai-2',
+        fromYear: '2008',
+        city: 'katowice',
+        lat: '50.26288',
+        lon: '19.02276',
+        distance: '10',
+        fuelType: 'petrol',
+        gearbox: 'manual',
+        engine_capacity_from: '1450',
+        engine_capacity_to: '1650',
+        price_from: '20000',
+        price_to: '40000',
+        sortBy: 'created_at_first',
+        enabled: true
     }
 ]

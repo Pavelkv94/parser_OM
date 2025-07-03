@@ -59,6 +59,8 @@ model Filter {
   price_to             String @map("price_to") //35000
   sortBy               String @default("created_at_first") @map("sort_by") //relevance_web
 
+  enabled Boolean @default(true) @map("enabled")
+
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 

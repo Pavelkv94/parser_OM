@@ -3307,6 +3307,7 @@ export namespace Prisma {
     price_from: string | null
     price_to: string | null
     sortBy: string | null
+    enabled: boolean | null
     createdAt: Date | null
     updatedAt: Date | null
     userId: string | null
@@ -3328,6 +3329,7 @@ export namespace Prisma {
     price_from: string | null
     price_to: string | null
     sortBy: string | null
+    enabled: boolean | null
     createdAt: Date | null
     updatedAt: Date | null
     userId: string | null
@@ -3349,6 +3351,7 @@ export namespace Prisma {
     price_from: number
     price_to: number
     sortBy: number
+    enabled: number
     createdAt: number
     updatedAt: number
     userId: number
@@ -3372,6 +3375,7 @@ export namespace Prisma {
     price_from?: true
     price_to?: true
     sortBy?: true
+    enabled?: true
     createdAt?: true
     updatedAt?: true
     userId?: true
@@ -3393,6 +3397,7 @@ export namespace Prisma {
     price_from?: true
     price_to?: true
     sortBy?: true
+    enabled?: true
     createdAt?: true
     updatedAt?: true
     userId?: true
@@ -3414,6 +3419,7 @@ export namespace Prisma {
     price_from?: true
     price_to?: true
     sortBy?: true
+    enabled?: true
     createdAt?: true
     updatedAt?: true
     userId?: true
@@ -3508,6 +3514,7 @@ export namespace Prisma {
     price_from: string
     price_to: string
     sortBy: string
+    enabled: boolean
     createdAt: Date
     updatedAt: Date
     userId: string
@@ -3546,6 +3553,7 @@ export namespace Prisma {
     price_from?: boolean
     price_to?: boolean
     sortBy?: boolean
+    enabled?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     userId?: boolean
@@ -3570,6 +3578,7 @@ export namespace Prisma {
     price_from?: boolean
     price_to?: boolean
     sortBy?: boolean
+    enabled?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     userId?: boolean
@@ -3592,6 +3601,7 @@ export namespace Prisma {
     price_from?: boolean
     price_to?: boolean
     sortBy?: boolean
+    enabled?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     userId?: boolean
@@ -3614,12 +3624,13 @@ export namespace Prisma {
     price_from?: boolean
     price_to?: boolean
     sortBy?: boolean
+    enabled?: boolean
     createdAt?: boolean
     updatedAt?: boolean
     userId?: boolean
   }
 
-  export type FilterOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "brand" | "model" | "fromYear" | "city" | "lat" | "lon" | "distance" | "fuelType" | "gearbox" | "engine_capacity_from" | "engine_capacity_to" | "price_from" | "price_to" | "sortBy" | "createdAt" | "updatedAt" | "userId", ExtArgs["result"]["filter"]>
+  export type FilterOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "brand" | "model" | "fromYear" | "city" | "lat" | "lon" | "distance" | "fuelType" | "gearbox" | "engine_capacity_from" | "engine_capacity_to" | "price_from" | "price_to" | "sortBy" | "enabled" | "createdAt" | "updatedAt" | "userId", ExtArgs["result"]["filter"]>
   export type FilterInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     user?: boolean | UserDefaultArgs<ExtArgs>
     cars?: boolean | Filter$carsArgs<ExtArgs>
@@ -3654,6 +3665,7 @@ export namespace Prisma {
       price_from: string
       price_to: string
       sortBy: string
+      enabled: boolean
       createdAt: Date
       updatedAt: Date
       userId: string
@@ -4097,6 +4109,7 @@ export namespace Prisma {
     readonly price_from: FieldRef<"Filter", 'String'>
     readonly price_to: FieldRef<"Filter", 'String'>
     readonly sortBy: FieldRef<"Filter", 'String'>
+    readonly enabled: FieldRef<"Filter", 'Boolean'>
     readonly createdAt: FieldRef<"Filter", 'DateTime'>
     readonly updatedAt: FieldRef<"Filter", 'DateTime'>
     readonly userId: FieldRef<"Filter", 'String'>
@@ -5792,6 +5805,7 @@ export namespace Prisma {
     price_from: 'price_from',
     price_to: 'price_to',
     sortBy: 'sortBy',
+    enabled: 'enabled',
     createdAt: 'createdAt',
     updatedAt: 'updatedAt',
     userId: 'userId'
@@ -5876,6 +5890,13 @@ export namespace Prisma {
    * Reference to a field of type 'DateTime[]'
    */
   export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>
+    
+
+
+  /**
+   * Reference to a field of type 'Boolean'
+   */
+  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
     
 
 
@@ -6027,6 +6048,7 @@ export namespace Prisma {
     price_from?: StringFilter<"Filter"> | string
     price_to?: StringFilter<"Filter"> | string
     sortBy?: StringFilter<"Filter"> | string
+    enabled?: BoolFilter<"Filter"> | boolean
     createdAt?: DateTimeFilter<"Filter"> | Date | string
     updatedAt?: DateTimeFilter<"Filter"> | Date | string
     userId?: StringFilter<"Filter"> | string
@@ -6050,6 +6072,7 @@ export namespace Prisma {
     price_from?: SortOrder
     price_to?: SortOrder
     sortBy?: SortOrder
+    enabled?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     userId?: SortOrder
@@ -6076,6 +6099,7 @@ export namespace Prisma {
     price_from?: StringFilter<"Filter"> | string
     price_to?: StringFilter<"Filter"> | string
     sortBy?: StringFilter<"Filter"> | string
+    enabled?: BoolFilter<"Filter"> | boolean
     createdAt?: DateTimeFilter<"Filter"> | Date | string
     updatedAt?: DateTimeFilter<"Filter"> | Date | string
     userId?: StringFilter<"Filter"> | string
@@ -6099,6 +6123,7 @@ export namespace Prisma {
     price_from?: SortOrder
     price_to?: SortOrder
     sortBy?: SortOrder
+    enabled?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     userId?: SortOrder
@@ -6126,6 +6151,7 @@ export namespace Prisma {
     price_from?: StringWithAggregatesFilter<"Filter"> | string
     price_to?: StringWithAggregatesFilter<"Filter"> | string
     sortBy?: StringWithAggregatesFilter<"Filter"> | string
+    enabled?: BoolWithAggregatesFilter<"Filter"> | boolean
     createdAt?: DateTimeWithAggregatesFilter<"Filter"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Filter"> | Date | string
     userId?: StringWithAggregatesFilter<"Filter"> | string
@@ -6380,6 +6406,7 @@ export namespace Prisma {
     price_from: string
     price_to: string
     sortBy?: string
+    enabled?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     user: UserCreateNestedOneWithoutFiltersInput
@@ -6402,6 +6429,7 @@ export namespace Prisma {
     price_from: string
     price_to: string
     sortBy?: string
+    enabled?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     userId: string
@@ -6424,6 +6452,7 @@ export namespace Prisma {
     price_from?: StringFieldUpdateOperationsInput | string
     price_to?: StringFieldUpdateOperationsInput | string
     sortBy?: StringFieldUpdateOperationsInput | string
+    enabled?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     user?: UserUpdateOneRequiredWithoutFiltersNestedInput
@@ -6446,6 +6475,7 @@ export namespace Prisma {
     price_from?: StringFieldUpdateOperationsInput | string
     price_to?: StringFieldUpdateOperationsInput | string
     sortBy?: StringFieldUpdateOperationsInput | string
+    enabled?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     userId?: StringFieldUpdateOperationsInput | string
@@ -6468,6 +6498,7 @@ export namespace Prisma {
     price_from: string
     price_to: string
     sortBy?: string
+    enabled?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     userId: string
@@ -6489,6 +6520,7 @@ export namespace Prisma {
     price_from?: StringFieldUpdateOperationsInput | string
     price_to?: StringFieldUpdateOperationsInput | string
     sortBy?: StringFieldUpdateOperationsInput | string
+    enabled?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
@@ -6509,6 +6541,7 @@ export namespace Prisma {
     price_from?: StringFieldUpdateOperationsInput | string
     price_to?: StringFieldUpdateOperationsInput | string
     sortBy?: StringFieldUpdateOperationsInput | string
+    enabled?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     userId?: StringFieldUpdateOperationsInput | string
@@ -6803,6 +6836,11 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
+  export type BoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
   export type UserScalarRelationFilter = {
     is?: UserWhereInput
     isNot?: UserWhereInput
@@ -6834,6 +6872,7 @@ export namespace Prisma {
     price_from?: SortOrder
     price_to?: SortOrder
     sortBy?: SortOrder
+    enabled?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     userId?: SortOrder
@@ -6855,6 +6894,7 @@ export namespace Prisma {
     price_from?: SortOrder
     price_to?: SortOrder
     sortBy?: SortOrder
+    enabled?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     userId?: SortOrder
@@ -6876,9 +6916,18 @@ export namespace Prisma {
     price_from?: SortOrder
     price_to?: SortOrder
     sortBy?: SortOrder
+    enabled?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
     userId?: SortOrder
+  }
+
+  export type BoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
   }
 
   export type FilterScalarRelationFilter = {
@@ -7015,6 +7064,10 @@ export namespace Prisma {
     connectOrCreate?: CarCreateOrConnectWithoutFilterInput | CarCreateOrConnectWithoutFilterInput[]
     createMany?: CarCreateManyFilterInputEnvelope
     connect?: CarWhereUniqueInput | CarWhereUniqueInput[]
+  }
+
+  export type BoolFieldUpdateOperationsInput = {
+    set?: boolean
   }
 
   export type UserUpdateOneRequiredWithoutFiltersNestedInput = {
@@ -7176,6 +7229,19 @@ export namespace Prisma {
     _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
+  export type NestedBoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
+  export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
+  }
+
   export type FilterCreateWithoutUserInput = {
     id?: string
     brand: string
@@ -7192,6 +7258,7 @@ export namespace Prisma {
     price_from: string
     price_to: string
     sortBy?: string
+    enabled?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     cars?: CarCreateNestedManyWithoutFilterInput
@@ -7213,6 +7280,7 @@ export namespace Prisma {
     price_from: string
     price_to: string
     sortBy?: string
+    enabled?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     cars?: CarUncheckedCreateNestedManyWithoutFilterInput
@@ -7263,6 +7331,7 @@ export namespace Prisma {
     price_from?: StringFilter<"Filter"> | string
     price_to?: StringFilter<"Filter"> | string
     sortBy?: StringFilter<"Filter"> | string
+    enabled?: BoolFilter<"Filter"> | boolean
     createdAt?: DateTimeFilter<"Filter"> | Date | string
     updatedAt?: DateTimeFilter<"Filter"> | Date | string
     userId?: StringFilter<"Filter"> | string
@@ -7420,6 +7489,7 @@ export namespace Prisma {
     price_from: string
     price_to: string
     sortBy?: string
+    enabled?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     user: UserCreateNestedOneWithoutFiltersInput
@@ -7441,6 +7511,7 @@ export namespace Prisma {
     price_from: string
     price_to: string
     sortBy?: string
+    enabled?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
     userId: string
@@ -7478,6 +7549,7 @@ export namespace Prisma {
     price_from?: StringFieldUpdateOperationsInput | string
     price_to?: StringFieldUpdateOperationsInput | string
     sortBy?: StringFieldUpdateOperationsInput | string
+    enabled?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     user?: UserUpdateOneRequiredWithoutFiltersNestedInput
@@ -7499,6 +7571,7 @@ export namespace Prisma {
     price_from?: StringFieldUpdateOperationsInput | string
     price_to?: StringFieldUpdateOperationsInput | string
     sortBy?: StringFieldUpdateOperationsInput | string
+    enabled?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     userId?: StringFieldUpdateOperationsInput | string
@@ -7520,6 +7593,7 @@ export namespace Prisma {
     price_from: string
     price_to: string
     sortBy?: string
+    enabled?: boolean
     createdAt?: Date | string
     updatedAt?: Date | string
   }
@@ -7540,6 +7614,7 @@ export namespace Prisma {
     price_from?: StringFieldUpdateOperationsInput | string
     price_to?: StringFieldUpdateOperationsInput | string
     sortBy?: StringFieldUpdateOperationsInput | string
+    enabled?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     cars?: CarUpdateManyWithoutFilterNestedInput
@@ -7561,6 +7636,7 @@ export namespace Prisma {
     price_from?: StringFieldUpdateOperationsInput | string
     price_to?: StringFieldUpdateOperationsInput | string
     sortBy?: StringFieldUpdateOperationsInput | string
+    enabled?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     cars?: CarUncheckedUpdateManyWithoutFilterNestedInput
@@ -7582,6 +7658,7 @@ export namespace Prisma {
     price_from?: StringFieldUpdateOperationsInput | string
     price_to?: StringFieldUpdateOperationsInput | string
     sortBy?: StringFieldUpdateOperationsInput | string
+    enabled?: BoolFieldUpdateOperationsInput | boolean
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }

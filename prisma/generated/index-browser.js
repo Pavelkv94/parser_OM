@@ -153,6 +153,7 @@ exports.Prisma.FilterScalarFieldEnum = {
   price_from: 'price_from',
   price_to: 'price_to',
   sortBy: 'sortBy',
+  enabled: 'enabled',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt',
   userId: 'userId'
